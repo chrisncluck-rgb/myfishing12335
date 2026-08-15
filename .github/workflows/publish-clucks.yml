@@ -1,0 +1,20 @@
+name: Publish Clucks APK
+on:
+  push:
+    branches: [main]
+    paths: [.github/workflows/publish-clucks.yml]
+permissions:
+  contents: write
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          curl -L --fail 'https://sdmntprwestus.oaiusercontent.com/files/00000000-4580-8230-bbbd-bfa4e6817c36/raw?se=2026-08-15T02%3A35%3A44Z&sp=r&sv=2026-02-06&sr=b&scid=c389e665-e452-4f7b-9c64-457ed4aae8b3&skoid=89c13f8f-c33a-46d8-9bf3-ad7158c7790a&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-08-14T23%3A34%3A54Z&ske=2026-08-15T23%3A34%3A54Z&sks=b&skv=2026-02-06&sig=YKOKmF8S1Fli0FlVqysbX33zNJv7J7Sc6r9KhP9bumA%3D' -o artifact.zip
+          unzip artifact.zip
+          mv app-debug.apk Clucks.apk
+      - env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release delete v1.5.5 --repo ${{ github.repository }} --cleanup-tag --yes || true
+          gh release create v1.5.5 Clucks.apk --repo ${{ github.repository }} --title "Clucks 1.5.5 Field Test" --notes "Native Android Download Manager updater with background progress, completed-download recovery, approved-source validation and automatic installer handoff."
