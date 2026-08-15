@@ -1,0 +1,31 @@
+name: Publish Clucks 1.5.9
+
+on:
+  push:
+    paths:
+      - .github/workflows/publish-1.5.9.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download signed APK artifact
+        env:
+          APK_ARTIFACT_URL: "https://sdmntprwestcentralus.oaiusercontent.com/files/00000000-e294-81fb-8960-8c2d5d50fb19/raw?se=2026-08-15T04%3A22%3A25Z&sp=r&sv=2026-02-06&sr=b&scid=18abc5eb-7774-4ff8-ba63-9b1e60836683&skoid=18c14e53-ea0c-429b-8d09-d22d66ca7169&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-08-14T23%3A22%3A14Z&ske=2026-08-15T23%3A22%3A14Z&sks=b&skv=2026-02-06&sig=cGOucOkvFF6xpOGt23gZ6m%2BP7fJ2V07fL6B1Ke81WOQ%3D"
+        run: |
+          curl -L --fail "$APK_ARTIFACT_URL" -o release.zip
+          unzip release.zip
+          mv app-debug.apk Clucks.apk
+          test -s Clucks.apk
+      - name: Publish tester release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create v1.5.9 Clucks.apk \
+            --repo "${{ github.repository }}" \
+            --title "Clucks 1.5.9" \
+            --notes "Knot & Rig Lab now separates Knots from Rigs. Rig users choose a target species first and then see only that species' top 10 rigs. Adds the trusted research-evidence foundation for future official and recent fishing data."
