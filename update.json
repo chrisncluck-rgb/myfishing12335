@@ -1,6 +1,6 @@
 {
-  "versionCode": 15,
-  "versionName": "1.5.6",
+  "versionCode": 16,
+  "versionName": "1.5.7",
   "apkUrl": "https://github.com/chrisncluck-rgb/myfishing12335/releases/latest/download/Clucks.apk",
-  "notes": "Fixes the Lakes Near Me dialog so GPS-ranked USGS lake results are visible and selectable."
+  "notes": "Journal camera clarity improvement, simplified Game Plan water selection, and the new offline Knot & Rig Lab with 10 essential knots plus top species-based freshwater rigs."
 }
