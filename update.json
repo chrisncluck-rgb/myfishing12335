@@ -1,6 +1,6 @@
 {
-  "versionCode": 16,
-  "versionName": "1.5.7",
+  "versionCode": 17,
+  "versionName": "1.5.8",
   "apkUrl": "https://github.com/chrisncluck-rgb/myfishing12335/releases/latest/download/Clucks.apk",
-  "notes": "Journal camera clarity improvement, simplified Game Plan water selection, and the new offline Knot & Rig Lab with 10 essential knots plus top species-based freshwater rigs."
+  "notes": "Hotfix: registers the offline Knot & Rig Lab correctly so it opens instead of closing the app."
 }
