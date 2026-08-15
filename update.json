@@ -1,6 +1,6 @@
 {
-  "versionCode": 12,
-  "versionName": "1.5.3",
+  "versionCode": 13,
+  "versionName": "1.5.4",
   "apkUrl": "https://github.com/chrisncluck-rgb/myfishing12335/releases/latest/download/Clucks.apk",
-  "notes": "Reliable in-app Journal camera and GPS-ranked freshwater lakes and reservoirs within 20 miles using official USGS hydrography."
+  "notes": "Fixes Lakes Near Me so official USGS freshwater lake and reservoir names are returned and ranked correctly."
 }
