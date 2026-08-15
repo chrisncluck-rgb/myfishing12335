@@ -1,6 +1,6 @@
 {
-  "versionCode": 10,
-  "versionName": "1.5.1",
+  "versionCode": 11,
+  "versionName": "1.5.2",
   "apkUrl": "https://github.com/chrisncluck-rgb/myfishing12335/releases/latest/download/Clucks.apk",
-  "notes": "Fishing-specific package recognition, QR/barcode scanning, product lookup, water- and species-specific guided tips, and automatic update checks."
+  "notes": "Automatic state fishing-guide labels using selected water, GPS or profile ZIP; manual state override; and freshwater lake/reservoir search across all 50 states."
 }
