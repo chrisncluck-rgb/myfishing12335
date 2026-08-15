@@ -1,6 +1,6 @@
 {
-  "versionCode": 13,
-  "versionName": "1.5.4",
+  "versionCode": 14,
+  "versionName": "1.5.5",
   "apkUrl": "https://github.com/chrisncluck-rgb/myfishing12335/releases/latest/download/Clucks.apk",
-  "notes": "Fixes Lakes Near Me so official USGS freshwater lake and reservoir names are returned and ranked correctly."
+  "notes": "Native Android Download Manager updater with background progress, completed-download recovery and automatic installer handoff."
 }
