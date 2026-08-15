@@ -1,6 +1,6 @@
 {
-  "versionCode": 17,
-  "versionName": "1.5.8",
+  "versionCode": 18,
+  "versionName": "1.5.9",
   "apkUrl": "https://github.com/chrisncluck-rgb/myfishing12335/releases/latest/download/Clucks.apk",
-  "notes": "Hotfix: registers the offline Knot & Rig Lab correctly so it opens instead of closing the app."
+  "notes": "Knot & Rig Lab now separates Knots from Rigs. Choose a target species first to see only that species' top 10 rigs."
 }
