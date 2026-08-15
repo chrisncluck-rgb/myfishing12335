@@ -1,0 +1,20 @@
+name: Publish Clucks APK
+on:
+  push:
+    branches: [main]
+    paths: [.github/workflows/publish-clucks.yml]
+permissions:
+  contents: write
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          curl -L --fail 'https://sdmntprwestcentralus.oaiusercontent.com/files/00000000-70e4-81fb-af45-c63730813c87/raw?se=2026-08-15T02%3A53%3A39Z&sp=r&sv=2026-02-06&sr=b&scid=4d2354f6-16bd-424c-91ae-4926ef25e405&skoid=18c14e53-ea0c-429b-8d09-d22d66ca7169&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-08-14T23%3A10%3A19Z&ske=2026-08-15T23%3A10%3A19Z&sks=b&skv=2026-02-06&sig=S74Oj9bWikOHU10VDfjEo1jdpWZtfa4eBPGelJlj9zA%3D' -o artifact.zip
+          unzip artifact.zip
+          mv app-debug.apk Clucks.apk
+      - env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release delete v1.5.6 --repo ${{ github.repository }} --cleanup-tag --yes || true
+          gh release create v1.5.6 Clucks.apk --repo ${{ github.repository }} --title "Clucks 1.5.6 Field Test" --notes "Fixes the Lakes Near Me dialog so GPS-ranked USGS lake results are visible and selectable."
