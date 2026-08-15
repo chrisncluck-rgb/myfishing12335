@@ -1,0 +1,6 @@
+{
+  "versionCode": 10,
+  "versionName": "1.5.1",
+  "apkUrl": "https://github.com/chrisncluck-rgb/myfishing12335/releases/latest/download/Clucks.apk",
+  "notes": "Fishing-specific package recognition, QR/barcode scanning, product lookup, water- and species-specific guided tips, and automatic update checks."
+}
